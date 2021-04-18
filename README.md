@@ -103,7 +103,7 @@ I min fil twitter/resources/views/twoots/index.blade.php modtager jeg så de to 
         @endforeach
 ```
 
-Da index er default route, så hvis vi går til http://localhost:8000/twoots får vi <br>
+Da index er default route, så hvis vi går til http://localhost:8000/twoots får vi dette. Læg bl.a. mærke til, at da jeg er logget ind som simon, kan jeg kun slette simons twoots <br>
 <img alt="Screenshot 2021-04-18 at 16 15 37" src="https://user-images.githubusercontent.com/54975711/115148757-5ac40600-a061-11eb-8a51-d2c0b826f510.png">
 
 

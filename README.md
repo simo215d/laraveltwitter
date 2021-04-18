@@ -74,6 +74,34 @@ inde i twitter/app/Http/Controllers/TwootController.php (læs //kommentarene for
         return view('twoots.index',['twoots'=>$sortedtwootsDesc], ['users'=>$users]);
     }
 ```
+I min fil twitter/resources/views/twoots/index.blade.php modtager jeg så de to liser sortedtwootsDesc og users, som jeg bruger blades funktioner med. Jeg iterer igennem twoots med @foreach og laver en div til dem hver især. Jeg bruger @if til fx, at se hvis twoots owner_fk og user_id er ens, og så viser jeg brugerens navn, da det er twooten, kun indeholder en ID til ejeren. 
+```php
+        @foreach ($twoots as $twoot)
+        <div class="row border-primary border-bottom">
+            <div class="col-2">
+                <img src="https://i.pinimg.com/474x/ec/8a/78/ec8a788c83ad5a6bac2d115a274d8917.jpg" alt="profpic" style="border-radius: 100%; width: 100%;" class="img-responsive">
+            </div>
+            <div class="col-8" style="padding-top: 10px">
+                @foreach ($users as $user)
+                    @if ($user->id == $twoot->owner_fk)
+                        <p><span>@</span>{{ $user->name }}</p>
+                    @endif
+                @endforeach 
+                <p>{{ $twoot->content }}</p>
+            </div>
+            <div class="col-2">
+                <form action="{{ route('twoots.destroy',$twoot->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    @if (auth()->user() != null &&auth()->user()->id == $twoot->owner_fk)
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    @endif
+                </form>
+            </div>
+        </div>
+        @endforeach
+```
+
 Da index er default route, så hvis vi går til http://localhost:8000/twoots får vi <br>
 <img alt="Screenshot 2021-04-18 at 16 15 37" src="https://user-images.githubusercontent.com/54975711/115148757-5ac40600-a061-11eb-8a51-d2c0b826f510.png">
 

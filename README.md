@@ -74,5 +74,6 @@ inde i twitter/app/Http/Controllers/TwootController.php (læs //kommentarene for
         return view('twoots.index',['twoots'=>$sortedtwootsDesc], ['users'=>$users]);
     }
 ```
+Da index er default route, så hvis vi går til http://localhost:8000/twoots får vi <br>
 
 

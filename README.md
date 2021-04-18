@@ -48,11 +48,31 @@ Gør brug af laravels indbyggede object relationel mapper og lav en twoot model 
 php artisan make:controller TwootController --resource --model=Twoot
 ```
 
-For, at twoot controlleren virker, skal vi lige lave en reference inden i routes/web.php
+For, at twoot controlleren virker, skal vi lige lave en reference inden i twitter/routes/web.php
 ```
 Route::resource('/twoots', TwootController::class);
 ```
 
 Vi har nu en model, controller og en database tabel, så vi kan begynde <br>
-I vores controller får man brug for, at kunne oprette en twoot, se twoots, og slette
+I vores controller får man brug for, at kunne oprette en twoot, se twoots, og slette. <br>
+inde i twitter/app/Http/Controllers/TwootController.php (læs //kommentarene for uddybning) <br>
+
+```php
+    public function index()
+    {
+        //jeg bruger mine models til at tilgå deres all metode. :: betyder at det er en static metode
+        $twoots = Twoot::all();
+        $users = User::all();
+
+        //da det ikke er normale php arrays, men laravel collections kan jeg nemt bruge metoderne, som laravel har lavet
+        //sortby sortere mine twoots i en ascending (lav til høj)
+        $sortedtwootsAsc = $twoots->sortBy('created_at');
+        //men jeg vil have nyeste twoots (højest) øverst, så jeg bruger sortDesc som vender min liste om
+        $sortedtwootsDesc = $sortedtwootsAsc->sortDesc();
+
+        //jeg returnere viewet twoots.index blade filen, som kan modtage variabler ligesom handlebars i nodejs
+        return view('twoots.index',['twoots'=>$sortedtwootsDesc], ['users'=>$users]);
+    }
+```
+
 

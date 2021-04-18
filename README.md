@@ -15,12 +15,14 @@ Giver os en User model
 Giver os en masse controllers og tilhørende views
 
 Før det virker skal vi migrere User til vores database. Database indstillinger findes i .env filen. Jeg skrev 
+'''
 DB_CONNECTION=mysql <br>
 DB_HOST=127.0.0.1 <br>
 DB_PORT=3306 <br>
 DB_DATABASE=twotter <br>
 DB_USERNAME=root <br>
 DB_PASSWORD= <br>
+'''
 
 og så 
 php artisan migrate

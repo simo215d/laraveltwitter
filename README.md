@@ -53,6 +53,6 @@ For, at twoot controlleren virker, skal vi lige lave en reference inden i routes
 Route::resource('/twoots', TwootController::class);
 ```
 
-Vi har nu en model, controller og en database tabel, så vi kan begynde
+Vi har nu en model, controller og en database tabel, så vi kan begynde <br>
 I vores controller får man brug for, at kunne oprette en twoot, se twoots, og slette
 

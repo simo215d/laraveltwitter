@@ -74,7 +74,7 @@ inde i twitter/app/Http/Controllers/TwootController.php (læs //kommentarene for
         return view('twoots.index',['twoots'=>$sortedtwootsDesc], ['users'=>$users]);
     }
 ```
-I min fil twitter/resources/views/twoots/index.blade.php modtager jeg så de to liser sortedtwootsDesc og users, som jeg bruger blades funktioner med. Jeg iterer igennem twoots med @foreach og laver en div til dem hver især. Jeg bruger @if til fx, at se hvis twoots owner_fk og user_id er ens, og så viser jeg brugerens navn, da det er twooten, kun indeholder en ID til ejeren. 
+I min fil twitter/resources/views/twoots/index.blade.php modtager jeg så de to lister sortedtwootsDesc og users, som jeg bruger blades funktioner med. Jeg iterer igennem twoots med @foreach og laver en div til dem hver især. Jeg bruger @if til fx, at se hvis twoots owner_fk og user_id er ens, og så viser jeg brugerens navn, da det er twooten, kun indeholder en ID til ejeren. 
 ```php
         @foreach ($twoots as $twoot)
         <div class="row border-primary border-bottom">

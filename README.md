@@ -1,5 +1,5 @@
-Jeg har lavet en lite version af twitter, som jeg kalder Twooter
-Jeg vil gennemgå hvordan jeg har brugt laravel frameworket til at lave den grundlæggende opsætning ved hjælp af tutorials og hvad jeg selv har lavet.
+Jeg har lavet en lite version af twitter, som jeg kalder Twooter <br>
+Jeg vil gennemgå hvordan jeg har brugt laravel frameworket til at lave den grundlæggende opsætning ved hjælp af tutorials og hvad jeg selv har lavet.<br>
 
 Jeg bruger composer (en slags package manager til php) til at hente en frisk laravel projekt
 ```
@@ -16,9 +16,9 @@ i mit projekt har jeg tænkt mig at bruge bootstrap til frontend styling, så je
 php artisan ui bootstrap --auth
 ```
 
-De 2 kommandoer gør en masse ting:
-Giver os en User model
-Giver os en masse controllers og tilhørende views
+De 2 kommandoer gør en masse ting: <br>
+Giver os en User model <br>
+Giver os en masse controllers og tilhørende views <br>
 
 Før det virker skal vi migrere User til vores database. Database indstillinger findes i .env filen. Jeg skrev 
 ```
@@ -35,8 +35,8 @@ og så
 php artisan migrate
 ```
 
-Nu har jeg et grundlæggende website med brugere, så jeg kan begynde at lave twitter funktioner
-Jeg vil have at hvis man er logget ind kan man poste en twoot. Twoots bliver gemt i databasen og alle twoots kan ses og hvem der har twooted dem.
+Nu har jeg et grundlæggende website med brugere, så jeg kan begynde at lave twitter funktioner <br>
+Jeg vil have at hvis man er logget ind kan man poste en twoot. Twoots bliver gemt i databasen og alle twoots kan ses og hvem der har twooted dem. <br>
 Lav en migration som laver en tabel med twoots
 ```
 php artisan make:migration create_twoots_table --create=twoots

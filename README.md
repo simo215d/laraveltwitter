@@ -49,7 +49,7 @@ php artisan make:controller TwootController --resource --model=Twoot
 ```
 
 For, at twoot controlleren virker, skal vi lige lave en reference inden i twitter/routes/web.php
-```
+```php
 Route::resource('/twoots', TwootController::class);
 ```
 

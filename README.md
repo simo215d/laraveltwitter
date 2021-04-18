@@ -1,5 +1,5 @@
 Jeg har lavet en lite version af twitter, som jeg kalder Twooter <br>
-Jeg vil gennemgå hvordan jeg har brugt laravel frameworket til at lave den grundlæggende opsætning ved hjælp af tutorials og hvad jeg selv har lavet.<br>
+Jeg vil gennemgå hvordan jeg har brugt laravel frameworket til at lave den grundlæggende opsætning ved hjælp af tutorials og hvad jeg selv har lavet. Jeg har ikke lavet mange kommentare i koden, men jeg har istedet lavet denne readme til at forklare de vigtigste ting<br>
 
 Jeg bruger composer (en slags package manager til php) til at hente en frisk laravel projekt
 ```
